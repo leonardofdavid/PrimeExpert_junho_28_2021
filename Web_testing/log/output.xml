@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 4.0.3 (Python 3.9.6 on win32)" generated="20210701 20:58:27.167" rpa="false" schemaversion="2">
+<suite id="s1" name="Web Testing" source="C:\Users\CASA\Documents\Projetos\PrimeExpert_junho_28_2021\web_testing">
+<suite id="s1-s1" name="Web Test" source="C:\Users\CASA\Documents\Projetos\PrimeExpert_junho_28_2021\web_testing\web_test.robot">
+<kw name="Abrir o navegador" library="resource_web" type="SETUP">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>browser=chrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20210701 20:58:27.901" level="INFO">Opening browser 'chrome' to base url 'None'.</msg>
+<status status="PASS" starttime="20210701 20:58:27.901" endtime="20210701 20:58:30.708"/>
+</kw>
+<status status="PASS" starttime="20210701 20:58:27.900" endtime="20210701 20:58:30.709"/>
+</kw>
+<test id="s1-s1-t1" name="Caso de Teste 01: Pesquisar produto existente">
+<kw name="Acessar a página home do site Automation Practice" library="resource_web">
+<kw name="Go To" library="SeleniumLibrary">
+<arg>${URL}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20210701 20:58:30.735" level="INFO">Opening url 'http://automationpractice.com'</msg>
+<status status="PASS" starttime="20210701 20:58:30.734" endtime="20210701 20:58:38.606"/>
+</kw>
+<status status="PASS" starttime="20210701 20:58:30.730" endtime="20210701 20:58:38.607"/>
+</kw>
+<kw name="Digitar o nome do produto &quot;${produto}&quot; no campo de pesquisa" library="resource_web" sourcename="Digitar o nome do produto &quot;${produto}&quot; no campo de pesquisa">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>id:search_query_top</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20210701 20:58:38.609" endtime="20210701 20:58:38.665"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id:search_query_top</arg>
+<arg>${produto}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20210701 20:58:38.667" level="INFO">Typing text 'Blouse' into text field 'id:search_query_top'.</msg>
+<status status="PASS" starttime="20210701 20:58:38.666" endtime="20210701 20:58:38.882"/>
+</kw>
+<status status="PASS" starttime="20210701 20:58:38.608" endtime="20210701 20:58:38.883"/>
+</kw>
+<kw name="Clicar no botão pesquisar" library="resource_web">
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>name:submit_search</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20210701 20:58:38.887" level="INFO">Clicking button 'name:submit_search'.</msg>
+<status status="PASS" starttime="20210701 20:58:38.887" endtime="20210701 20:58:40.996"/>
+</kw>
+<status status="PASS" starttime="20210701 20:58:38.886" endtime="20210701 20:58:40.997"/>
+</kw>
+<kw name="Conferir se o produto &quot;${produto}&quot; foi listado no site" library="resource_web" sourcename="Conferir se o produto &quot;${produto}&quot; foi listado no site">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>//h5[@itemprop='name'][contains(.,'Blouse')]</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20210701 20:58:41.015" endtime="20210701 20:58:41.133"/>
+</kw>
+<kw name="Element Text Should Be" library="SeleniumLibrary">
+<arg>//h5[@itemprop='name'][contains(.,'Blouse')]</arg>
+<arg>${produto}</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<msg timestamp="20210701 20:58:41.134" level="INFO">Verifying element '//h5[@itemprop='name'][contains(.,'Blouse')]' contains exact text 'Blouse'.</msg>
+<status status="PASS" starttime="20210701 20:58:41.133" endtime="20210701 20:58:41.215"/>
+</kw>
+<status status="PASS" starttime="20210701 20:58:41.014" endtime="20210701 20:58:41.216"/>
+</kw>
+<status status="PASS" starttime="20210701 20:58:30.709" endtime="20210701 20:58:41.217"/>
+</test>
+<doc>arquivo responsavel pelas importacoes, variaveis e keywords</doc>
+<status status="PASS" starttime="20210701 20:58:27.256" endtime="20210701 20:58:41.220"/>
+</suite>
+<status status="PASS" starttime="20210701 20:58:27.173" endtime="20210701 20:58:41.225"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="Web Testing">Web Testing</stat>
+<stat pass="1" fail="0" skip="0" id="s1-s1" name="Web Test">Web Testing.Web Test</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
